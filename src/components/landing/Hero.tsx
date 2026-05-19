@@ -104,7 +104,7 @@ export function Hero() {
               <Sparkles className="h-3.5 w-3.5" /> AI outreach command center
             </div>
 
-            <h1 className="mt-6 max-w-4xl text-balance font-display text-3xl font-bold leading-[1.04] text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mt-6 max-w-4xl text-balance text-3xl font-bold leading-[1.04] text-white sm:text-4xl lg:text-5xl">
               {words.map((word, index) => (
                 <span key={`${word}-${index}`} className="mr-3 inline-block overflow-hidden pb-1">
                   <span className="hero-word inline-block">{word}</span>
@@ -130,12 +130,24 @@ export function Hero() {
               transition={{ duration: 0.65, delay: 0.45, ease: "easeOut" }}
               className="mt-7 flex flex-col gap-3 sm:flex-row"
             >
-              <a href="#cta" className="btn-primary !border-white/20 !bg-white !text-[#08243a]">
+              <motion.a
+                href="#cta"
+                whileTap={{ scale: 0.96 }}
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                className="btn-primary !border-white/20 !bg-white !text-[#08243a]"
+              >
                 Start scaling now <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="#features" className="btn-ghost !border-white/30 !bg-white/10 !text-white">
+              </motion.a>
+              <motion.a
+                href="#features"
+                whileTap={{ scale: 0.96 }}
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.14 }}
+                className="btn-ghost !border-white/30 !bg-white/10 !text-white"
+              >
                 <PlayCircle className="h-4 w-4" /> Watch the platform
-              </a>
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -161,7 +173,7 @@ export function Hero() {
                 scale: { duration: 0.55, delay: 0.65 },
                 y: { duration: 4.8, repeat: Infinity, ease: "easeInOut" },
               }}
-              className="absolute left-[31%] top-[59%] z-30 w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-[22px] border border-white/80 bg-white/95 p-1.5 text-[#061b2d] shadow-[0_28px_90px_rgba(15,23,42,0.25)] backdrop-blur-xl [zoom:0.86] md:w-[360px]"
+              className="absolute left-[31%] top-[59%] z-30 w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-[22px] border border-white/80 bg-white/95 p-1.5 text-[#061b2d] backdrop-blur-xl [zoom:0.86] md:w-[360px]"
             >
               <div className="absolute -right-3 top-14 hidden h-10 w-10 items-center justify-center rounded-full bg-white text-violet-600 shadow-xl shadow-violet-100 md:flex">
                 <Mail className="h-5 w-5" />
@@ -171,11 +183,11 @@ export function Hero() {
               </div>
 
               <div className="grid gap-1.5 md:grid-cols-[1fr_0.92fr]">
-                <div className="relative min-h-[260px] overflow-hidden rounded-2xl bg-white p-2 shadow-xl shadow-violet-100/70">
+                <div className="relative min-h-[260px] overflow-hidden rounded-2xl bg-white p-2">
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f8f6ff_100%)]" />
                   <div className="relative flex h-full min-h-[244px] flex-col items-center justify-center">
-                    <div className="relative mt-6 w-[112%] overflow-hidden rounded-2xl bg-white p-3 shadow-[0_20px_60px_rgba(124,58,237,0.18)]">
-                      <div className="absolute -right-2 -top-3 flex h-12 w-12 items-center justify-center rounded-full bg-violet-600 text-white shadow-xl shadow-violet-200 ring-4 ring-white">
+                    <div className="relative mt-6 w-[112%] overflow-hidden rounded-2xl bg-white p-3">
+                      <div className="absolute -right-2 -top-3 flex h-12 w-12 items-center justify-center rounded-full bg-violet-600 text-white ring-4 ring-white">
                         <Mail className="h-6 w-6" />
                       </div>
                       <div className="flex items-center justify-between pr-9">
@@ -187,7 +199,7 @@ export function Hero() {
                           Running
                         </span>
                       </div>
-                      <div className="mt-4 rounded-md bg-slate-50 px-2 py-1 text-[8px] font-semibold text-slate-600">
+                      <div className="mt-4 rounded-md bg-slate-50 px-2 py-1 text-[8px] font-semibold text-[#061b2d]">
                         Subject: Quick idea to help {"{Company}"} grow
                       </div>
                       <div className="mt-4 grid grid-cols-4 gap-1.5 text-center">
@@ -198,7 +210,7 @@ export function Hero() {
                           ["Positive Reply", "112"],
                         ].map(([label, value]) => (
                           <div key={label}>
-                            <p className="text-[7px] font-bold text-slate-400">{label}</p>
+                            <p className="text-[7px] font-bold text-[#061b2d]/70">{label}</p>
                             <p className="mt-1 text-[12px] font-black">{value}</p>
                           </div>
                         ))}
@@ -238,7 +250,7 @@ export function Hero() {
                 </div>
 
                 <div className="grid gap-1.5">
-                  <div className="rounded-2xl bg-white p-2 shadow-xl shadow-violet-100/70">
+                  <div className="rounded-2xl bg-white p-2">
                     <p className="text-[10px] font-black">Outreach Success Rate</p>
                     <div className="mt-1.5 flex items-center gap-3">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full border-[6px] border-violet-500 border-r-violet-100 text-xs font-black">
@@ -246,13 +258,13 @@ export function Hero() {
                       </div>
                       <div>
                         <p className="text-xs font-black text-emerald-600">+ 12%</p>
-                        <p className="text-[8px] font-semibold text-slate-500">vs last month</p>
+                        <p className="text-[8px] font-semibold text-[#061b2d]">vs last month</p>
                       </div>
                     </div>
                     <div className="mt-1.5 h-3 rounded-b-xl bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(139,92,246,0.04))]" />
                   </div>
 
-                  <div className="rounded-2xl bg-white p-2 text-center shadow-xl shadow-violet-100/70">
+                  <div className="rounded-2xl bg-white p-2 text-center">
                     <div className="flex items-center justify-center gap-2">
                       <p className="flex items-center justify-center gap-1.5 text-[10px] font-black">
                         <Mail className="h-3.5 w-3.5 text-violet-600" />
@@ -262,7 +274,7 @@ export function Hero() {
                         Running
                       </span>
                     </div>
-                    <div className="mt-1.5 rounded-md bg-slate-50 px-2 py-1 text-[8px] font-semibold text-slate-600">
+                    <div className="mt-1.5 rounded-md bg-slate-50 px-2 py-1 text-[8px] font-semibold text-[#061b2d]">
                       Subject: Quick idea to help {"{Company}"} grow
                     </div>
                     <div className="mt-1.5 grid grid-cols-4 gap-1.5 text-center">
@@ -273,7 +285,7 @@ export function Hero() {
                         ["Positive Reply", "112"],
                       ].map(([label, value]) => (
                         <div key={label}>
-                          <p className="text-[7px] font-bold text-slate-400">{label}</p>
+                          <p className="text-[7px] font-bold text-[#061b2d]/70">{label}</p>
                           <p className="mt-0.5 text-[10px] font-black">{value}</p>
                         </div>
                       ))}
@@ -281,7 +293,7 @@ export function Hero() {
                     <div className="mt-1.5 h-3 rounded-b-xl bg-[linear-gradient(135deg,rgba(139,92,246,0.24),rgba(139,92,246,0.02))]" />
                   </div>
 
-                  <div className="rounded-2xl bg-white p-2 shadow-xl shadow-violet-100/70">
+                  <div className="rounded-2xl bg-white p-2">
                     <div className="flex items-center justify-between">
                       <p className="flex items-center gap-1.5 text-[10px] font-black">
                         <PhoneCall className="h-3.5 w-3.5 text-violet-600" />
@@ -291,7 +303,7 @@ export function Hero() {
                         Active
                       </span>
                     </div>
-                    <div className="mt-1.5 space-y-1 text-[8px] font-semibold text-slate-500">
+                    <div className="mt-1.5 space-y-1 text-[8px] font-semibold text-[#061b2d]">
                       {[
                         ["Step 1: Call", "Completed"],
                         ["Step 2: Voicemail", "Completed"],
@@ -309,7 +321,7 @@ export function Hero() {
                         </div>
                       ))}
                     </div>
-                    <button className="mt-1.5 w-full rounded-md bg-violet-600 py-1 text-[8px] font-black text-white">
+                    <button className="ui-button-motion mt-1.5 w-full rounded-md bg-violet-600 py-1 text-[8px] font-black text-white">
                       Log Call
                     </button>
                   </div>
@@ -320,13 +332,13 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.9, ease: "easeOut" }}
-              className="absolute left-1/2 top-[110%] z-20 grid w-[min(92vw,660px)] -translate-x-1/2 grid-cols-1 gap-2 rounded-2xl border border-violet-100 bg-white px-3 py-1 text-[#061b2d] shadow-xl shadow-violet-950/20 sm:grid-cols-[1fr_auto_1fr_auto_1fr] lg:left-[47%] lg:top-[108%]"
+              className="absolute left-1/2 top-[110%] z-20 grid w-[min(92vw,660px)] -translate-x-1/2 grid-cols-1 gap-2 rounded-2xl border border-violet-100 bg-white px-3 py-1 text-[#061b2d] sm:grid-cols-[1fr_auto_1fr_auto_1fr] lg:left-[47%] lg:top-[108%]"
             >
               <div className="flex items-center gap-2">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-600">
                   <Target className="h-5 w-5" />
                 </span>
-                <p className="text-[9px] font-semibold leading-3 text-slate-500">
+                <p className="text-[9px] font-semibold leading-3 text-[#061b2d]">
                   <span className="block text-[10px] font-black text-[#061b2d]">Connect</span>
                   with the right prospects
                 </p>
@@ -336,7 +348,7 @@ export function Hero() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
                   <span className="text-lg leading-none">...</span>
                 </span>
-                <p className="text-[9px] font-semibold leading-3 text-slate-500">
+                <p className="text-[9px] font-semibold leading-3 text-[#061b2d]">
                   <span className="block text-[10px] font-black text-[#061b2d]">Engage</span>
                   across every channel
                 </p>
@@ -346,7 +358,7 @@ export function Hero() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-600">
                   <BarChart3 className="h-5 w-5" />
                 </span>
-                <p className="text-[9px] font-semibold leading-3 text-slate-500">
+                <p className="text-[9px] font-semibold leading-3 text-[#061b2d]">
                   <span className="block text-[10px] font-black text-[#061b2d]">Close</span>
                   more deals, faster
                 </p>

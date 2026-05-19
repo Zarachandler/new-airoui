@@ -40,6 +40,60 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/features/ai-email-automation",
+      "regex": "^/features/ai\\-email\\-automation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/ai\\-email\\-automation(?:/)?$"
+    },
+    {
+      "page": "/features/ai-email-generator",
+      "regex": "^/features/ai\\-email\\-generator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/ai\\-email\\-generator(?:/)?$"
+    },
+    {
+      "page": "/features/domains-and-emails",
+      "regex": "^/features/domains\\-and\\-emails(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/domains\\-and\\-emails(?:/)?$"
+    },
+    {
+      "page": "/features/email-campaigns",
+      "regex": "^/features/email\\-campaigns(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/email\\-campaigns(?:/)?$"
+    },
+    {
+      "page": "/features/email-sequences",
+      "regex": "^/features/email\\-sequences(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/email\\-sequences(?:/)?$"
+    },
+    {
+      "page": "/features/email-warmup",
+      "regex": "^/features/email\\-warmup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/email\\-warmup(?:/)?$"
+    },
+    {
+      "page": "/features/linkedin-automation",
+      "regex": "^/features/linkedin\\-automation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/linkedin\\-automation(?:/)?$"
+    },
+    {
+      "page": "/features/prospect-crm",
+      "regex": "^/features/prospect\\-crm(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/prospect\\-crm(?:/)?$"
+    },
+    {
+      "page": "/features/unified-inbox",
+      "regex": "^/features/unified\\-inbox(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features/unified\\-inbox(?:/)?$"
     }
   ],
   "dataRoutes": [],

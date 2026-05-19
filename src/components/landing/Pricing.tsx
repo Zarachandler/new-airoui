@@ -8,7 +8,7 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden bg-[radial-gradient(circle_at_0%_0%,rgba(56,189,248,0.2)_0%,rgba(56,189,248,0.12)_20%,transparent_42%),radial-gradient(circle_at_100%_100%,rgba(56,189,248,0.2)_0%,rgba(56,189,248,0.12)_20%,transparent_42%),linear-gradient(120deg,#101a42_0%,#061534_100%)] pt-10 pb-16 sm:pt-12 sm:pb-20"
+      className="relative overflow-hidden bg-[#050b20] pt-10 pb-16 sm:pt-12 sm:pb-20"
     >
       <motion.div
         aria-hidden="true"
@@ -48,7 +48,7 @@ export function Pricing() {
                   className="absolute -left-9 -top-12 h-auto w-[240px] max-w-none "
                 />
               </span>
-              <span>360AIRO </span>
+              
             </span>
           </h2>
 
@@ -58,18 +58,22 @@ export function Pricing() {
           </p>
 
           <div className="mt-5 flex items-center justify-center gap-3">
-            <a
+            <motion.a
               href="#cta"
-              className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-[#061534] transition-all hover:bg-white/90 hover:scale-105"
+              animate={{ y: [0, -3, 0] }}
+              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+              className="rounded-lg bg-white px-6 py-2.5 text-sm font-semibold text-[#061534] transition-all hover:bg-white/90"
             >
               Get Started
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#pricing"
-              className="rounded-full border border-white/30 bg-white/10 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white/20 hover:border-white/50"
+              animate={{ y: [0, -3, 0] }}
+              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.14 }}
+              className="rounded-lg border border-white/30 bg-white/10 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:border-white/50 hover:bg-white/20"
             >
               See Pricing
-            </a>
+            </motion.a>
           </div>
         </div>
 

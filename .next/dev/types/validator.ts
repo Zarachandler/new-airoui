@@ -36,6 +36,87 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
+// Validate ../../../app/features/ai-email-automation/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/ai-email-automation">> = Specific
+  const handler = {} as typeof import("../../../app/features/ai-email-automation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/ai-email-generator/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/ai-email-generator">> = Specific
+  const handler = {} as typeof import("../../../app/features/ai-email-generator/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/domains-and-emails/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/domains-and-emails">> = Specific
+  const handler = {} as typeof import("../../../app/features/domains-and-emails/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/email-campaigns/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/email-campaigns">> = Specific
+  const handler = {} as typeof import("../../../app/features/email-campaigns/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/email-sequences/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/email-sequences">> = Specific
+  const handler = {} as typeof import("../../../app/features/email-sequences/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/email-warmup/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/email-warmup">> = Specific
+  const handler = {} as typeof import("../../../app/features/email-warmup/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/linkedin-automation/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/linkedin-automation">> = Specific
+  const handler = {} as typeof import("../../../app/features/linkedin-automation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/prospect-crm/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/prospect-crm">> = Specific
+  const handler = {} as typeof import("../../../app/features/prospect-crm/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/features/unified-inbox/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/features/unified-inbox">> = Specific
+  const handler = {} as typeof import("../../../app/features/unified-inbox/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific

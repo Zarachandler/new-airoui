@@ -227,12 +227,14 @@ export function Audience() {
                     ))}
                   </div>
                 )}
-                <a
+                <motion.a
                   href="#cta"
-                  className="mt-6 w-fit rounded-full bg-black px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-gray-800"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                  className="mt-6 w-fit rounded-lg bg-black px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-gray-800"
                 >
                   Start For Free
-                </a>
+                </motion.a>
               </div>
               <div className="mt-6">
                 <CardVisual type={section.visual} />

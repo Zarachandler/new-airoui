@@ -1,8 +1,16 @@
+"use client";
+
 import logo from "@/assets/logo.png";
+import { FeaturesDropdown } from "@/Features/FeaturesDropdown";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export function Nav() {
+  const [showStartArrow, setShowStartArrow] = useState(false);
+
   const links = [
     { label: "Features", href: "#features" },
     { label: "Free-Tools", href: "#how" },
@@ -29,13 +37,17 @@ export function Nav() {
   <ul className="hidden items-center gap-2 text-base font-bold text-white md:flex">
     {links.map((link) => (
       <li key={link.href}>
+        {link.label === "Features" ? (
+          <FeaturesDropdown />
+        ) : (
         <a
           href={link.href}
           /* CHANGED: Added 'w-32' (wider), 'inline-block text-center' (centers text), and 'border border-white/30' (adds a subtle border) */
-          className="inline-block w-30 rounded-full px-4 py-2 text-center transition hover:bg-white/10 hover:text-white/90"
+          className="inline-block w-30 rounded-lg px-4 py-2 text-center transition hover:bg-white/10 hover:text-white/90"
         >
           {link.label}
         </a>
+        )}
       </li>
     ))}
   </ul>
@@ -44,18 +56,32 @@ export function Nav() {
     {/* CHANGED: Added 'w-36 justify-center' to make the button explicitly wider and center the text. The border was already here! */}
     <a 
       href="#cta" 
-      className="hidden sm:inline-flex w-36 justify-center rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20"
+      className="ui-button-motion hidden w-36 justify-center rounded-lg border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 sm:inline-flex"
     >
       Sign in
     </a>
     
     {/* CHANGED: Added 'w-36 justify-center' for width, and 'border border-white' to give it a matching border */}
-    <a 
-      href="#cta" 
-      className="inline-flex w-36 justify-center rounded-full border border-white bg-white px-5 py-2.5 text-sm font-semibold text-[#061534] transition hover:bg-white/90"
+    <motion.a 
+      href="#cta"
+      onClick={() => setShowStartArrow(true)}
+      whileTap={{ scale: 0.96 }}
+      animate={{ y: [0, -3, 0] }}
+      transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+      className="inline-flex w-36 items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-[#061534] transition hover:bg-white/90"
     >
       Start free
-    </a>
+      {showStartArrow && (
+        <motion.span
+          initial={{ opacity: 0, x: -8, width: 0 }}
+          animate={{ opacity: 1, x: 0, width: "auto" }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="inline-flex"
+        >
+          <ArrowRight className="h-4 w-4" />
+        </motion.span>
+      )}
+    </motion.a>
   </div>
 </div>
           

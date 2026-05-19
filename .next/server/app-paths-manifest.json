@@ -1,5 +1,14 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/_global-error/page": "app/_global-error/page.js",
+  "/features/ai-email-automation/page": "app/features/ai-email-automation/page.js",
+  "/features/ai-email-generator/page": "app/features/ai-email-generator/page.js",
+  "/features/domains-and-emails/page": "app/features/domains-and-emails/page.js",
+  "/features/email-campaigns/page": "app/features/email-campaigns/page.js",
+  "/features/email-sequences/page": "app/features/email-sequences/page.js",
+  "/features/email-warmup/page": "app/features/email-warmup/page.js",
+  "/features/linkedin-automation/page": "app/features/linkedin-automation/page.js",
+  "/features/prospect-crm/page": "app/features/prospect-crm/page.js",
+  "/features/unified-inbox/page": "app/features/unified-inbox/page.js",
   "/page": "app/page.js"
 }
