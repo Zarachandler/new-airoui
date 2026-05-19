@@ -1,0 +1,12 @@
+:HL["/_next/static/css/0e57a585c9e2f1d2.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap","style"]
+:HL["https://cdn.simpleicons.org/hubspot/FF7A59","image"]
+:HL["/integrations/salesforce-logo.png","image"]
+:HL["/integrations/pipedrive-logo.png","image"]
+:HL["/integrations/zoho-logo.png","image"]
+:HL["/integrations/slack-logo.png","image"]
+:HL["/integrations/gmail-logo.png","image"]
+:HL["/integrations/outlook-logo.png","image"]
+:HL["https://cdn.simpleicons.org/zapier/FF4A00","image"]
+:HL["/features/lead-import.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"yHFtZzD2HCN79NSKvbLMe"}
