@@ -6,19 +6,9 @@ import { type ReactNode } from "react";
 
 function StaticWrap({ children }: { children: ReactNode }) {
   return (
-    <motion.div
-      className="relative overflow-hidden rounded-3xl p-[2px] shadow-xl shadow-sky-100/70"
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-    >
-      <motion.div
-        aria-hidden="true"
-        className="absolute -inset-[55%] bg-[conic-gradient(from_0deg,#061534,rgba(56,189,248,0.9),#101a42,rgba(56,189,248,0.9),#061534)]"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-      />
+    <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-white p-[2px] shadow-xl shadow-sky-100/70">
       <div className="relative h-full rounded-[22px] bg-white">{children}</div>
-    </motion.div>
+    </div>
   );
 }
 

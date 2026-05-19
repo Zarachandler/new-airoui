@@ -27,7 +27,7 @@ const sections = [
     visual: "prospecting",
   },
   {
-    title: "Email Finder",
+    title: "Email Warmup",
     desc: "Enrich prospects with verified professional emails when LinkedIn is not enough, with a guaranteed 61%+ match rate.",
     points: [],
     tag: "Verified Emails",
