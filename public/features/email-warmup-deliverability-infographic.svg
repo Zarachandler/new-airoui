@@ -1,0 +1,67 @@
+<svg width="760" height="760" viewBox="0 0 760 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes dashMove {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -48; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.06); opacity: 0.82; }
+    }
+    .flow-line { animation: dashMove 2.8s linear infinite; }
+    .center-pulse { transform-origin: 380px 380px; animation: pulse 2.6s ease-in-out infinite; }
+  </style>
+
+  <rect width="760" height="760" rx="44" fill="#F5FAFF"/>
+  <rect x="44" y="44" width="672" height="672" rx="34" fill="white" stroke="#D9ECFF" stroke-width="2"/>
+
+  <text x="380" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#061534">Deliverability Recovery Flow</text>
+  <text x="380" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B">Clean signals first, then scale with confidence</text>
+
+  <circle class="center-pulse" cx="380" cy="382" r="122" fill="#EAF6FF"/>
+  <circle cx="380" cy="382" r="88" fill="#061534"/>
+  <path d="M338 386L366 414L426 350" stroke="#B7DFFF" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="380" y="498" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#061534">Trust Rebuilt</text>
+
+  <path class="flow-line" d="M270 230C318 198 442 198 490 230" stroke="#2F7DF6" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12"/>
+  <path class="flow-line" d="M548 278C584 330 584 434 548 486" stroke="#2F7DF6" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12"/>
+  <path class="flow-line" d="M490 536C442 566 318 566 270 536" stroke="#2F7DF6" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12"/>
+  <path class="flow-line" d="M212 486C176 434 176 330 212 278" stroke="#2F7DF6" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12"/>
+
+  <g>
+    <rect x="80" y="184" width="226" height="118" rx="22" fill="#061534"/>
+    <circle cx="124" cy="228" r="22" fill="#B7DFFF"/>
+    <text x="124" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#061534">1</text>
+    <text x="164" y="220" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="white">Find weak signals</text>
+    <text x="164" y="250" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#B7DFFF">Spam, bounce, blacklist risk</text>
+  </g>
+
+  <g>
+    <rect x="454" y="184" width="226" height="118" rx="22" fill="#EAF6FF" stroke="#B7DFFF" stroke-width="2"/>
+    <circle cx="498" cy="228" r="22" fill="#2F7DF6"/>
+    <text x="498" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="white">2</text>
+    <text x="538" y="220" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#061534">Clean behavior</text>
+    <text x="538" y="250" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748B">Safer warmup activity</text>
+  </g>
+
+  <g>
+    <rect x="454" y="462" width="226" height="118" rx="22" fill="#061534"/>
+    <circle cx="498" cy="506" r="22" fill="#B7DFFF"/>
+    <text x="498" y="514" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#061534">3</text>
+    <text x="538" y="498" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="white">Build trust</text>
+    <text x="538" y="528" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#B7DFFF">Primary inbox signals</text>
+  </g>
+
+  <g>
+    <rect x="80" y="462" width="226" height="118" rx="22" fill="#EAF6FF" stroke="#B7DFFF" stroke-width="2"/>
+    <circle cx="124" cy="506" r="22" fill="#6D3CFF"/>
+    <text x="124" y="514" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="white">4</text>
+    <text x="164" y="498" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#061534">Scale safely</text>
+    <text x="164" y="528" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748B">Grow volume with limits</text>
+  </g>
+
+  <g>
+    <rect x="300" y="608" width="160" height="38" rx="19" fill="white" stroke="#D9ECFF"/>
+    <text x="380" y="633" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="900" fill="#2F7DF6">Low spam risk</text>
+  </g>
+</svg>

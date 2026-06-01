@@ -1,3 +1,3 @@
-:HL["/_next/static/css/92db876fd50104ab.css","style"]
+:HL["/_next/static/css/963d6bee5dd57ced.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"features","param":null,"prefetchHints":0,"slots":{"children":{"name":"ai-email-automation","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"rz4R8gg_K0teE1XmwsLjk"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"features","param":null,"prefetchHints":0,"slots":{"children":{"name":"ai-email-automation","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"A15ZXavqJwRvbCJd6zWg2"}

@@ -14,7 +14,7 @@ function StaticWrap({ children }: { children: ReactNode }) {
 
 export function Integrations() {
   return (
-    <section id="integrations" className="section-panel py-24 sm:py-28">
+    <section id="integrations" className="bg-white py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div>
@@ -44,7 +44,7 @@ export function Integrations() {
                 className="absolute inset-0 opacity-60"
                 style={{
                   backgroundImage:
-                    "linear-gradient(rgba(124,58,237,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.09) 1px, transparent 1px)",
+                    "linear-gradient(rgba(6,21,52,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(6,21,52,0.09) 1px, transparent 1px)",
                   backgroundSize: "28px 28px",
                 }}
               />
@@ -137,7 +137,7 @@ export function Integrations() {
                 </div>
 
                 <div className="flex justify-center">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-violet-600 shadow-xl shadow-violet-100">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#253a7d] shadow-xl shadow-[#253a7d]/20">
                     <motion.span
                       animate={{ x: [0, 10, 0], y: [0, -7, 0], opacity: [1, 0.72, 1] }}
                       transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
@@ -151,11 +151,11 @@ export function Integrations() {
                   <StaticWrap>
                     <div className="rounded-[22px] bg-white/95 p-3">
                       <div className="flex items-center gap-3">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-600 text-white shadow-lg shadow-violet-200">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#253a7d] text-white shadow-lg shadow-[#253a7d]/20">
                           <CheckCircle2 className="h-5 w-5" />
                         </span>
                         <h3 className="text-base font-black leading-tight text-[#061b2d]">
-                          One Platform. <span className="text-violet-600">One Workflow.</span>
+                          One Platform. <span className="text-[#253a7d]">One Workflow.</span>
                         </h3>
                       </div>
                       <p className="mt-3 text-xs font-semibold leading-5 text-slate-600">
@@ -168,7 +168,7 @@ export function Integrations() {
                   <StaticWrap>
                     <div className="overflow-hidden rounded-[22px] bg-white">
                       <div className="grid grid-cols-[48px_1fr]">
-                        <div className="flex flex-col items-center gap-3 bg-violet-600 py-3 text-white">
+                        <div className="flex flex-col items-center gap-3 bg-[#253a7d] py-3 text-white">
                           {[Home, UsersRound, Send, Mail, BarChart3].map((Icon, index) => (
                             <Icon key={index} className="h-4 w-4" />
                           ))}
@@ -185,7 +185,7 @@ export function Integrations() {
                                 key={label as string}
                                 className="rounded-xl border border-slate-100 p-2"
                               >
-                                <Icon className="mx-auto h-4 w-4 text-violet-600" />
+                                <Icon className="mx-auto h-4 w-4 text-[#253a7d]" />
                                 <p className="mt-2 text-[10px] font-black text-[#061b2d]">
                                   {label as string}
                                 </p>
@@ -199,7 +199,7 @@ export function Integrations() {
                               ["Meetings", "248"],
                               ["Revenue", "$2.4M"],
                             ].map(([label, value]) => (
-                              <div key={label} className="rounded-xl bg-violet-50 p-2">
+                              <div key={label} className="rounded-xl bg-[#eaf1ff] p-2">
                                 <p className="text-[9px] font-bold text-slate-500">{label}</p>
                                 <p className="mt-1 text-sm font-black text-[#061b2d]">{value}</p>
                               </div>
@@ -225,7 +225,7 @@ export function Integrations() {
                 </div>
 
                 <StaticWrap>
-                  <div className="rounded-full bg-white px-6 py-2.5 text-center text-sm font-black text-violet-700">
+                  <div className="rounded-full bg-white px-6 py-2.5 text-center text-sm font-black text-[#253a7d]">
                     Smarter Outreach. Better Conversations. More Revenue.
                   </div>
                 </StaticWrap>

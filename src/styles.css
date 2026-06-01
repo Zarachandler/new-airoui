@@ -160,29 +160,34 @@
     transform: translateY(-3px);
   }
 }
+@keyframes warmup-border-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(0.99 0.004 250);
-  --foreground: #252830;
-  --card: oklch(1 0 0);
-  --card-foreground: #252830;
-  --popover: oklch(1 0 0);
-  --popover-foreground: #252830;
-  --primary: #252830;
+  --background: #ffffff;
+  --foreground: #081028;
+  --card: #ffffff;
+  --card-foreground: #081028;
+  --popover: #ffffff;
+  --popover-foreground: #081028;
+  --primary: #081028;
   --primary-foreground: #ffffff;
-  --secondary: color-mix(in srgb, #6981c5 12%, white);
-  --secondary-foreground: #252830;
-  --muted: color-mix(in srgb, #6981c5 10%, white);
-  --muted-foreground: #535969;
-  --accent: #535fb1;
+  --secondary: color-mix(in srgb, #253a7d 14%, white);
+  --secondary-foreground: #081028;
+  --muted: color-mix(in srgb, #253a7d 10%, white);
+  --muted-foreground: #475569;
+  --accent: #253a7d;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.6 0.22 25);
-  --border: #6981c5;
-  --input: color-mix(in srgb, #6981c5 10%, white);
-  --ring: #6981c5;
-  --brand: #535fb1;
-  --brand-glow: #6981c5;
+  --border: #dfe7f4;
+  --input: color-mix(in srgb, #253a7d 10%, white);
+  --ring: #253a7d;
+  --brand: #253a7d;
+  --brand-glow: #081028;
 }
 
 .dark {
@@ -202,8 +207,16 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 75% 45% at 50% -10%, color-mix(in srgb, #6981c5 22%, transparent), transparent 70%),
-      radial-gradient(ellipse 45% 35% at 88% 18%, color-mix(in srgb, #535fb1 12%, transparent), transparent 72%),
+      radial-gradient(
+        ellipse 75% 45% at 50% -10%,
+        color-mix(in srgb, #6981c5 22%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 45% 35% at 88% 18%,
+        color-mix(in srgb, #535fb1 12%, transparent),
+        transparent 72%
+      ),
       linear-gradient(180deg, #ffffff, color-mix(in srgb, #6981c5 4%, white) 48%, #ffffff);
   }
   h1,
@@ -217,13 +230,13 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #252830 8%, #535fb1 54%, #6981c5 100%);
+    background: linear-gradient(135deg, #081028 8%, #253a7d 54%, #253a7d 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .text-shimmer {
-    background: linear-gradient(90deg, #252830 0%, #535969 46%, #535fb1 100%);
+    background: linear-gradient(90deg, #081028 0%, #253a7d 46%, #253a7d 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -231,16 +244,28 @@
     animation: shimmer 3s linear infinite;
   }
   .glass {
-    background: linear-gradient(135deg, color-mix(in srgb, #ffffff 86%, transparent), color-mix(in srgb, #6981c5 12%, white 72%));
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, #ffffff 86%, transparent),
+      color-mix(in srgb, #253a7d 16%, white 72%)
+    );
     backdrop-filter: blur(12px);
-    border: 1px solid color-mix(in srgb, #6981c5 34%, transparent);
+    border: 1px solid color-mix(in srgb, #253a7d 34%, transparent);
   }
   .glass-strong {
     background:
-      linear-gradient(135deg, color-mix(in srgb, #ffffff 90%, transparent), color-mix(in srgb, #6981c5 14%, white 76%)),
-      linear-gradient(180deg, color-mix(in srgb, #ffffff 96%, transparent), color-mix(in srgb, #6981c5 6%, white 94%));
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, #ffffff 90%, transparent),
+        color-mix(in srgb, #253a7d 18%, white 76%)
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, #ffffff 96%, transparent),
+        color-mix(in srgb, #253a7d 8%, white 94%)
+      );
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, #6981c5 34%, transparent);
+    border: 1px solid color-mix(in srgb, #253a7d 34%, transparent);
     box-shadow: 0 24px 70px -34px oklch(0.58 0.2 250 / 0.35);
   }
   .glow-border {
@@ -254,9 +279,9 @@
     padding: 1px;
     background: linear-gradient(
       135deg,
-      color-mix(in srgb, #6981c5 70%, transparent),
+      color-mix(in srgb, #253a7d 70%, transparent),
       transparent 42%,
-      color-mix(in srgb, #535fb1 75%, transparent)
+      color-mix(in srgb, #081028 75%, transparent)
     );
     -webkit-mask:
       linear-gradient(#000 0 0) content-box,
@@ -279,7 +304,21 @@
     left: 0;
     width: 100%;
     background: radial-gradient(circle at center, rgba(255, 255, 255, 0.18), transparent 55%);
-    clip-path: polygon(0 42%, 8% 35%, 18% 44%, 28% 34%, 38% 44%, 48% 36%, 58% 46%, 68% 34%, 78% 44%, 88% 36%, 100% 44%, 100% 100%, 0 100%);
+    clip-path: polygon(
+      0 42%,
+      8% 35%,
+      18% 44%,
+      28% 34%,
+      38% 44%,
+      48% 36%,
+      58% 46%,
+      68% 34%,
+      78% 44%,
+      88% 36%,
+      100% 44%,
+      100% 100%,
+      0 100%
+    );
     opacity: 0.45;
     transform: translateY(0);
     animation: cta-wave-move 10s ease-in-out infinite alternate;
@@ -291,10 +330,14 @@
   }
   @keyframes cta-grid-scroll {
     from {
-      background-position: 0 0, 0 0;
+      background-position:
+        0 0,
+        0 0;
     }
     to {
-      background-position: 48px 48px, -48px -48px;
+      background-position:
+        48px 48px,
+        -48px -48px;
     }
   }
   @keyframes cta-wave-move {
@@ -307,58 +350,71 @@
   }
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-300;
-    background: #252830;
+    background: #081028;
     color: #ffffff;
-    border: 1px solid #252830;
+    border: 1px solid #081028;
     animation: button-motion 2.8s ease-in-out infinite;
     box-shadow:
-      0 14px 38px -12px color-mix(in srgb, #252830 60%, transparent),
+      0 14px 38px -12px color-mix(in srgb, #081028 60%, transparent),
       inset 0 1px 0 oklch(1 0 0 / 0.35);
   }
   .btn-primary:hover {
-    background: #252830;
+    background: #081028;
     color: #ffffff;
     box-shadow:
-      0 18px 48px -12px color-mix(in srgb, #252830 58%, transparent),
+      0 18px 48px -12px color-mix(in srgb, #081028 58%, transparent),
       inset 0 1px 0 oklch(1 0 0 / 0.35);
   }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-300;
-    background: #252830;
+    background: #081028;
     color: #ffffff;
-    border: 1px solid #252830;
+    border: 1px solid #081028;
     animation: button-motion 2.8s ease-in-out infinite;
   }
   .btn-ghost:hover {
-    background: #252830;
+    background: #081028;
     color: #ffffff;
-    border-color: #252830;
+    border-color: #081028;
   }
   .section-panel {
     position: relative;
     overflow: hidden;
-    border-block: 1px solid color-mix(in srgb, #6981c5 30%, transparent);
+    border-block: 1px solid color-mix(in srgb, #253a7d 30%, transparent);
     background:
-      radial-gradient(ellipse at top left, color-mix(in srgb, #6981c5 12%, transparent), transparent 52%),
-      radial-gradient(ellipse at bottom right, color-mix(in srgb, #535fb1 9%, transparent), transparent 52%),
-      #ffffff;
+      radial-gradient(circle at 42% 18%, rgba(37, 58, 125, 0.28), transparent 36%),
+      radial-gradient(circle at 72% 58%, rgba(8, 16, 40, 0.18), transparent 40%),
+      #081028;
+  }
+  .hero-surface-bg {
+    background:
+      radial-gradient(circle at 42% 18%, rgba(37, 58, 125, 0.28), transparent 36%),
+      radial-gradient(circle at 72% 58%, rgba(8, 16, 40, 0.18), transparent 40%),
+      #081028;
+  }
+  .hero-section-bg {
+    background:
+      radial-gradient(circle at 42% 18%, rgba(81, 104, 255, 0.26), transparent 36%),
+      radial-gradient(circle at 72% 58%, rgba(14, 165, 233, 0.18), transparent 40%),
+      #030711;
   }
   .brand-kicker {
     @apply text-xs font-semibold uppercase;
     letter-spacing: 0.3em;
-    color: #535fb1;
+    color: #253a7d;
   }
   .neon-card {
     background:
-      linear-gradient(135deg, color-mix(in srgb, #6981c5 11%, transparent), transparent 34%), color-mix(in srgb, #ffffff 94%, transparent);
-    border: 1px solid color-mix(in srgb, #6981c5 34%, transparent);
+      linear-gradient(135deg, color-mix(in srgb, #253a7d 11%, transparent), transparent 34%),
+      color-mix(in srgb, #ffffff 94%, transparent);
+    border: 1px solid color-mix(in srgb, #253a7d 34%, transparent);
     box-shadow:
       inset 0 1px 0 oklch(1 0 0 / 0.75),
       0 20px 60px -40px oklch(0.45 0.12 250 / 0.38);
   }
   .signal-line {
-    background: linear-gradient(90deg, #6981c5, #535fb1 52%, #252830);
-    box-shadow: 0 0 22px color-mix(in srgb, #6981c5 55%, transparent);
+    background: linear-gradient(90deg, #081028, #253a7d 52%, #081028);
+    box-shadow: 0 0 22px color-mix(in srgb, #253a7d 55%, transparent);
   }
   .sequence-step {
     animation: sequence-step 3.25s ease-in-out infinite;
@@ -380,14 +436,47 @@
   .ui-button-motion {
     animation: button-motion 2.8s ease-in-out infinite;
   }
+  .warmup-animated-border {
+    isolation: isolate;
+  }
+  .warmup-animated-border > * {
+    position: relative;
+    z-index: 1;
+  }
+  .warmup-animated-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(from 0deg, #081028, #253a7d, #081028, #253a7d);
+    animation: warmup-border-spin 4s linear infinite;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  .warmup-animated-border::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    z-index: 0;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, #081028, #253a7d, #081028, #253a7d);
+    filter: blur(12px);
+    opacity: 0.42;
+    animation: warmup-border-spin 4s linear infinite;
+  }
   .data-dot {
-    background: linear-gradient(135deg, #6981c5, #535fb1);
-    box-shadow: 0 0 18px color-mix(in srgb, #535fb1 52%, transparent);
+    background: linear-gradient(135deg, #081028, #253a7d);
+    box-shadow: 0 0 18px color-mix(in srgb, #253a7d 52%, transparent);
   }
   .info-chip {
     @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium;
-    border-color: color-mix(in srgb, #6981c5 38%, transparent);
+    border-color: color-mix(in srgb, #253a7d 38%, transparent);
     background: oklch(1 0 0 / 0.82);
-    color: #535969;
+    color: #475569;
   }
 }

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/case-study-scale-decision-maker-prospecting/layout,_N_T_/blog/case-study-scale-decision-maker-prospecting/page,_N_T_/blog/case-study-scale-decision-maker-prospecting"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/blog/case-study-scale-decision-maker-prospecting/__PAGE__",
+    "/blog/case-study-scale-decision-maker-prospecting",
+    "/blog",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -13,9 +13,11 @@ import Testimonials from "@/components/landing/Testimonials";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen bg-[#030711] text-foreground">
+      <div className="absolute inset-0 bg-[#030711]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_42%_18%,rgba(81,104,255,0.26),transparent_36%),radial-gradient(circle_at_72%_58%,rgba(14,165,233,0.18),transparent_40%)]" />
       <Nav />
-      <main>
+      <main className="relative">{/* relative for proper z-index stacking */}
         <Hero />
         <Logos />
         <Features />

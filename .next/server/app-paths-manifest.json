@@ -1,6 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/_global-error/page": "app/_global-error/page.js",
+  "/icon.png/route": "app/icon.png/route.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
   "/features/ai-email-automation/page": "app/features/ai-email-automation/page.js",
   "/features/ai-email-generator/page": "app/features/ai-email-generator/page.js",
   "/features/domains-and-emails/page": "app/features/domains-and-emails/page.js",
@@ -10,5 +13,6 @@
   "/features/linkedin-automation/page": "app/features/linkedin-automation/page.js",
   "/features/prospect-crm/page": "app/features/prospect-crm/page.js",
   "/features/unified-inbox/page": "app/features/unified-inbox/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/blog/case-study-scale-decision-maker-prospecting/page": "app/blog/case-study-scale-decision-maker-prospecting/page.js"
 }

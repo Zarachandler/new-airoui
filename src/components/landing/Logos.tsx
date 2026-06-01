@@ -12,7 +12,7 @@ export function Logos() {
   const row = [...items, ...items];
 
   return (
-    <section className="border-y border-slate-100 bg-[#051421] py-14">
+    <section className="hero-surface-bg border-y border-slate-100 py-14">
       <div className="mx-auto max-w-6xl px-4">
         <p className="text-center text-xs uppercase tracking-[0.3em] text-white">
           Integrate with the tools you already use

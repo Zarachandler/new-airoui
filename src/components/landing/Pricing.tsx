@@ -8,20 +8,8 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden bg-[#050b20] pt-10 pb-16 sm:pt-12 sm:pb-20"
+      className="hero-section-bg relative overflow-hidden pt-10 pb-16 sm:pt-12 sm:pb-20"
     >
-      <motion.div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-22"
-        animate={{ backgroundPosition: ["0px 0px", "72px 72px"] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.28) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.28) 2px, transparent 2px)",
-          backgroundSize: "72px 72px",
-        }}
-      />
-
       <div className="relative mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
@@ -48,7 +36,6 @@ export function Pricing() {
                   className="absolute -left-9 -top-12 h-auto w-[240px] max-w-none "
                 />
               </span>
-              
             </span>
           </h2>
 

@@ -1,50 +1,68 @@
 "use client";
 
-import heroPerson from "@/assets/hero-person.png";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import { ArrowRight, BarChart3, Mail, PhoneCall, PlayCircle, Sparkles, Target } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-const words = ["Scale", "sales", "outreach", "with", "360Airo", "AI."];
+const headlineLines = ["Supercharge", "Your Sales Outreach"];
+const stats = [
+  {
+    value: "3.2x",
+    label: "Average Reply Rate Lift",
+  },
+  {
+    value: "4,200+",
+    label: "Campaigns Launched",
+  },
+  {
+    value: "89%",
+    label: "Customer Retention",
+  },
+];
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".hero-word", {
-        yPercent: 110,
-        opacity: 0,
-        stagger: 0.07,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-      const signalNodes = gsap.utils.toArray(".signal-node");
-      if (signalNodes.length > 0) {
-        gsap.to(signalNodes, {
-          y: -12,
-          x: 6,
-          duration: 2.5,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          stagger: 0.16,
-        });
-      }
+      gsap.fromTo(
+        ".hero-line-reveal",
+        {
+          clipPath: "inset(0 0 100% 0)",
+          opacity: 0,
+        },
+        {
+          clipPath: "inset(0 0 0% 0)",
+          opacity: 1,
+          duration: 1,
+          stagger: 0.14,
+          ease: "power3.out",
+        },
+      );
 
-      const corePulse = gsap.utils.toArray(".core-pulse");
-      if (corePulse.length > 0) {
-        gsap.to(corePulse, {
-          scale: 1.12,
-          opacity: 0.28,
-          duration: 1.8,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      }
+      gsap.fromTo(
+        ".hero-copy-fade",
+        {
+          y: 18,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "power3.out",
+          delay: 0.35,
+        },
+      );
+
+      gsap.to(".headline-shimmer", {
+        backgroundPositionX: "200%",
+        duration: 6,
+        repeat: -1,
+        ease: "none",
+      });
     }, heroRef);
 
     return () => ctx.revert();
@@ -53,318 +71,105 @@ export function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative isolate overflow-hidden bg-[#051421] pt-6 pb-8 text-white sm:pt-10 sm:pb-10"
+      className="relative isolate min-h-[640px] overflow-hidden bg-[#030711] px-4 pt-12 pb-20 text-white sm:min-h-[680px] sm:pt-14 lg:min-h-[720px]"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_28%,rgba(124,58,237,0.36),transparent_28%),radial-gradient(circle_at_12%_14%,rgba(79,70,229,0.34),transparent_26%),linear-gradient(115deg,#020617_0%,#071a3d_48%,#3b0764_100%)]" />
+      <div className="absolute inset-0 bg-[#030711]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_42%_18%,rgba(81,104,255,0.26),transparent_36%),radial-gradient(circle_at_72%_58%,rgba(14,165,233,0.18),transparent_40%)]" />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="hero-3d-lines absolute left-[-18%] top-[-16%] h-[112%] w-[72%] -skew-x-[34deg] bg-[linear-gradient(125deg,rgba(58,78,178,0.62),rgba(28,45,112,0.36)_46%,rgba(8,17,43,0.16))] shadow-[54px_0_120px_rgba(4,12,34,0.46)]" />
+        <div className="hero-3d-lines absolute left-[20%] top-[-10%] h-[116%] w-[42%] -skew-x-[34deg] bg-[linear-gradient(125deg,rgba(55,73,170,0.54),rgba(23,42,107,0.32)_58%,rgba(7,15,37,0.12))] shadow-[48px_0_130px_rgba(70,105,255,0.2)]" />
+        <div className="hero-3d-lines absolute right-[-18%] top-[4%] h-[105%] w-[58%] -skew-x-[34deg] bg-[linear-gradient(125deg,rgba(24,53,119,0.28),rgba(56,86,172,0.52)_42%,rgba(7,16,40,0.48))] shadow-[-58px_0_130px_rgba(12,22,55,0.56)]" />
+        <div className="hero-3d-lines absolute bottom-[-30%] left-[38%] h-[58%] w-[64%] -skew-x-[34deg] bg-[linear-gradient(125deg,rgba(70,92,196,0.3),rgba(27,55,125,0.42),rgba(6,13,31,0.42))] shadow-[-42px_-42px_100px_rgba(72,106,255,0.2)]" />
+
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.18),transparent_30%,transparent_65%,rgba(2,6,23,0.38))]" />
+      </div>
+
       <motion.div
         aria-hidden="true"
-        className="absolute inset-0 opacity-50"
-        animate={{ backgroundPosition: ["0px 0px", "72px 72px"] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+        className="absolute inset-0 opacity-[0.06]"
+        animate={{ backgroundPosition: ["0px 0px", "160px 0px"] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
         style={{
           backgroundImage:
-            "linear-gradient(rgba(155,232,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(155,232,255,0.12) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
+            "linear-gradient(90deg, rgba(255,255,255,0.7) 0, transparent 18%, transparent 82%, rgba(255,255,255,0.7) 100%)",
+          backgroundSize: "220px 100%",
         }}
       />
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-45"
-        viewBox="0 0 1440 720"
-        preserveAspectRatio="none"
-      >
-        <motion.path
-          d="M0 505 C170 350 312 450 480 286 S804 158 958 246 1182 406 1440 210"
-          fill="none"
-          stroke="rgba(186,244,255,0.38)"
-          strokeWidth="2"
-          initial={{ pathLength: 0.35, opacity: 0.35 }}
-          animate={{ pathLength: [0.35, 1, 0.35], opacity: [0.28, 0.7, 0.28] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.path
-          d="M0 210 C182 120 338 262 520 206 S832 62 1018 124 1215 250 1440 130"
-          fill="none"
-          stroke="rgba(99,214,231,0.28)"
-          strokeWidth="2"
-          initial={{ pathLength: 0.4, opacity: 0.24 }}
-          animate={{ pathLength: [0.4, 1, 0.4], opacity: [0.2, 0.58, 0.2] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </svg>
 
-      <div className="relative mx-auto max-w-7xl px-4">
-        <div className="grid min-h-[480px] items-center gap-10 lg:min-h-[540px] lg:grid-cols-[0.92fr_1.08fr]">
-          <motion.div
-            initial={{ opacity: 0, x: -28 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-            className="relative z-10 text-left lg:ml-14 xl:ml-24"
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-100/25 bg-white/10 px-4 py-1.5 text-xs font-semibold text-cyan-100 shadow-lg shadow-cyan-950/20 backdrop-blur-md">
-              <Sparkles className="h-3.5 w-3.5" /> AI outreach command center
-            </div>
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="hero-copy-fade inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_14px_40px_rgba(8,15,30,0.45)] backdrop-blur-xl"
+        >
+          <Zap className="h-3.5 w-3.5 text-[#7dd3fc]" />
+          AI-Powered Sales Outreach Platform
+        </motion.div>
 
-            <h1 className="mt-6 max-w-4xl text-balance text-3xl font-bold leading-[1.04] text-white sm:text-4xl lg:text-5xl">
-              {words.map((word, index) => (
-                <span key={`${word}-${index}`} className="mr-3 inline-block overflow-hidden pb-1">
-                  <span className="hero-word inline-block">{word}</span>
-                </span>
-              ))}
-            </h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.3, ease: "easeOut" }}
-              className="mt-5 max-w-3xl text-sm leading-6 text-white-50/78"
+        <div className="mt-8">
+          {headlineLines.map((line, lineIndex) => (
+            <div
+              key={line}
+              className="hero-line-reveal overflow-hidden pb-3"
+              style={{ opacity: 0 }}
             >
-              360Airo unifies LinkedIn outreach, cold email, calls, inbox rotation, CRM sync, and
-              analytics into one fast AI workflow.
-              <br />
-              Launch campaigns, protect deliverability, and convert replies into pipeline.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.45, ease: "easeOut" }}
-              className="mt-7 flex flex-col gap-3 sm:flex-row"
-            >
-              <motion.a
-                href="#cta"
-                whileTap={{ scale: 0.96 }}
-                animate={{ y: [0, -3, 0] }}
-                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-                className="btn-primary !border-white/20 !bg-white !text-[#08243a]"
+              <h1
+                className={`text-balance text-[clamp(2.5rem,6vw,4.6rem)] font-black leading-[0.9] tracking-[-0.05em] ${
+                  lineIndex === 0 ? "text-white/95" : "text-white"
+                }`}
               >
-                Start scaling now <ArrowRight className="h-4 w-4" />
-              </motion.a>
-              <motion.a
-                href="#features"
-                whileTap={{ scale: 0.96 }}
-                animate={{ y: [0, -3, 0] }}
-                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.14 }}
-                className="btn-ghost !border-white/30 !bg-white/10 !text-white"
-              >
-                <PlayCircle className="h-4 w-4" /> Watch the platform
-              </motion.a>
-            </motion.div>
-          </motion.div>
-
-          <div
-            className="relative min-h-[350px] overflow-visible [transform-style:preserve-3d]"
-            style={{ perspective: 1200 }}
-          >
-            <div className="absolute left-[68%] top-[40%] z-0 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full opacity-95 ring-2 ring-white md:h-[310px] md:w-[310px]">
-              <Image
-                src={heroPerson.src}
-                alt=""
-                width={640}
-                height={640}
-                aria-hidden="true"
-                className="h-full w-full scale-105 object-cover object-top"
-              />
+                <span
+                  className={`headline-shimmer inline-block bg-[length:200%_100%] bg-clip-text text-transparent ${
+                    lineIndex === 0
+                      ? "bg-[linear-gradient(90deg,#ffffff_0%,#9bd7ff_22%,#c4b5fd_48%,#ffffff_74%,#9bd7ff_100%)]"
+                      : "bg-[linear-gradient(90deg,#dbeafe_0%,#ffffff_30%,#ffffff_56%,#c4b5fd_78%,#dbeafe_100%)]"
+                  }`}
+                >
+                  {line}
+                </span>
+              </h1>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.96 }}
-              animate={{ opacity: 1, y: [0, -8, 0], scale: 1 }}
-              transition={{
-                opacity: { duration: 0.55, delay: 0.65 },
-                scale: { duration: 0.55, delay: 0.65 },
-                y: { duration: 4.8, repeat: Infinity, ease: "easeInOut" },
-              }}
-              className="absolute left-[31%] top-[59%] z-30 w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-[22px] border border-white/80 bg-white/95 p-1.5 text-[#061b2d] backdrop-blur-xl [zoom:0.86] md:w-[360px]"
-            >
-              <div className="absolute -right-3 top-14 hidden h-10 w-10 items-center justify-center rounded-full bg-white text-violet-600 shadow-xl shadow-violet-100 md:flex">
-                <Mail className="h-5 w-5" />
-              </div>
-              <div className="absolute -right-4 bottom-8 hidden h-10 w-10 items-center justify-center rounded-full bg-white text-violet-600 shadow-xl shadow-violet-100 md:flex">
-                <PhoneCall className="h-5 w-5" />
-              </div>
+          ))}
+        </div>
 
-              <div className="grid gap-1.5 md:grid-cols-[1fr_0.92fr]">
-                <div className="relative min-h-[260px] overflow-hidden rounded-2xl bg-white p-2">
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f8f6ff_100%)]" />
-                  <div className="relative flex h-full min-h-[244px] flex-col items-center justify-center">
-                    <div className="relative mt-6 w-[112%] overflow-hidden rounded-2xl bg-white p-3">
-                      <div className="absolute -right-2 -top-3 flex h-12 w-12 items-center justify-center rounded-full bg-violet-600 text-white ring-4 ring-white">
-                        <Mail className="h-6 w-6" />
-                      </div>
-                      <div className="flex items-center justify-between pr-9">
-                        <p className="flex items-center gap-1.5 text-[10px] font-black">
-                          <Mail className="h-3.5 w-3.5 text-violet-600" />
-                          Email Campaign
-                        </p>
-                        <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[7px] font-black text-emerald-600">
-                          Running
-                        </span>
-                      </div>
-                      <div className="mt-4 rounded-md bg-slate-50 px-2 py-1 text-[8px] font-semibold text-[#061b2d]">
-                        Subject: Quick idea to help {"{Company}"} grow
-                      </div>
-                      <div className="mt-4 grid grid-cols-4 gap-1.5 text-center">
-                        {[
-                          ["Sent", "12.4K"],
-                          ["Open Rate", "48%"],
-                          ["Reply Rate", "16%"],
-                          ["Positive Reply", "112"],
-                        ].map(([label, value]) => (
-                          <div key={label}>
-                            <p className="text-[7px] font-bold text-[#061b2d]/70">{label}</p>
-                            <p className="mt-1 text-[12px] font-black">{value}</p>
-                          </div>
-                        ))}
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        className="mt-5 h-12 w-full"
-                        viewBox="0 0 220 48"
-                        fill="none"
-                        preserveAspectRatio="none"
-                      >
-                        <path
-                          d="M0 38 C22 39 31 25 50 30 C70 36 80 17 101 22 C121 27 132 33 151 24 C172 14 191 20 220 12"
-                          stroke="rgba(124,58,237,0.82)"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M0 48 L0 38 C22 39 31 25 50 30 C70 36 80 17 101 22 C121 27 132 33 151 24 C172 14 191 20 220 12 L220 48 Z"
-                          fill="url(#emailHeroGraph)"
-                        />
-                        <defs>
-                          <linearGradient
-                            id="emailHeroGraph"
-                            x1="110"
-                            x2="110"
-                            y1="12"
-                            y2="48"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop stopColor="rgb(124,58,237)" stopOpacity="0.18" />
-                            <stop offset="1" stopColor="rgb(124,58,237)" stopOpacity="0" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+        <p className="hero-copy-fade mt-5 max-w-2xl text-sm leading-7 text-white/290 sm:text-base">
+          AI-powered multichannel outreach across email, LinkedIn, and calls
+          <br className="hidden sm:block" /> all in one intelligent platform.
+        </p>
 
-                <div className="grid gap-1.5">
-                  <div className="rounded-2xl bg-white p-2">
-                    <p className="text-[10px] font-black">Outreach Success Rate</p>
-                    <div className="mt-1.5 flex items-center gap-3">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border-[6px] border-violet-500 border-r-violet-100 text-xs font-black">
-                        85%
-                      </div>
-                      <div>
-                        <p className="text-xs font-black text-emerald-600">+ 12%</p>
-                        <p className="text-[8px] font-semibold text-[#061b2d]">vs last month</p>
-                      </div>
-                    </div>
-                    <div className="mt-1.5 h-3 rounded-b-xl bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(139,92,246,0.04))]" />
-                  </div>
+        <div className="hero-copy-fade mt-10 flex w-full max-w-[360px] flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
+          <a
+            href="#pricing"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#8fb4ff]/20 bg-white px-7 text-sm font-bold text-[#07111f] shadow-[0_18px_50px_rgba(255,255,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f7fbff]"
+          >
+            Start Free Trial
+            <ArrowRight className="h-4 w-4" />
+          </a>
 
-                  <div className="rounded-2xl bg-white p-2 text-center">
-                    <div className="flex items-center justify-center gap-2">
-                      <p className="flex items-center justify-center gap-1.5 text-[10px] font-black">
-                        <Mail className="h-3.5 w-3.5 text-violet-600" />
-                        Email Campaign
-                      </p>
-                      <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[7px] font-black text-emerald-600">
-                        Running
-                      </span>
-                    </div>
-                    <div className="mt-1.5 rounded-md bg-slate-50 px-2 py-1 text-[8px] font-semibold text-[#061b2d]">
-                      Subject: Quick idea to help {"{Company}"} grow
-                    </div>
-                    <div className="mt-1.5 grid grid-cols-4 gap-1.5 text-center">
-                      {[
-                        ["Sent", "8,725"],
-                        ["Open Rate", "48%"],
-                        ["Reply Rate", "16%"],
-                        ["Positive Reply", "112"],
-                      ].map(([label, value]) => (
-                        <div key={label}>
-                          <p className="text-[7px] font-bold text-[#061b2d]/70">{label}</p>
-                          <p className="mt-0.5 text-[10px] font-black">{value}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-1.5 h-3 rounded-b-xl bg-[linear-gradient(135deg,rgba(139,92,246,0.24),rgba(139,92,246,0.02))]" />
-                  </div>
+          <a
+            href="#cta"
+            className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/12 bg-white/[0.06] px-7 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.1]"
+          >
+            Book Demo
+          </a>
+        </div>
 
-                  <div className="rounded-2xl bg-white p-2">
-                    <div className="flex items-center justify-between">
-                      <p className="flex items-center gap-1.5 text-[10px] font-black">
-                        <PhoneCall className="h-3.5 w-3.5 text-violet-600" />
-                        Calling Sequence
-                      </p>
-                      <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[7px] font-black text-emerald-600">
-                        Active
-                      </span>
-                    </div>
-                    <div className="mt-1.5 space-y-1 text-[8px] font-semibold text-[#061b2d]">
-                      {[
-                        ["Step 1: Call", "Completed"],
-                        ["Step 2: Voicemail", "Completed"],
-                        ["Step 3: Follow-up Call", "Pending"],
-                      ].map(([label, status]) => (
-                        <div key={label} className="flex items-center justify-center gap-2">
-                          <span>{label}</span>
-                          <span
-                            className={
-                              status === "Pending" ? "text-orange-500" : "text-emerald-600"
-                            }
-                          >
-                            {status}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                    <button className="ui-button-motion mt-1.5 w-full rounded-md bg-violet-600 py-1 text-[8px] font-black text-white">
-                      Log Call
-                    </button>
-                  </div>
-                </div>
+        <div className="hero-copy-fade mt-16 grid w-full max-w-3xl grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
+          {stats.map((stat) => (
+            <div key={stat.label} className="px-4 py-5 text-center">
+              <div className="text-2xl font-black leading-none text-white sm:text-3xl">
+                {stat.value}
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.9, ease: "easeOut" }}
-              className="absolute left-1/2 top-[110%] z-20 grid w-[min(92vw,660px)] -translate-x-1/2 grid-cols-1 gap-2 rounded-2xl border border-violet-100 bg-white px-3 py-1 text-[#061b2d] sm:grid-cols-[1fr_auto_1fr_auto_1fr] lg:left-[47%] lg:top-[108%]"
-            >
-              <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-600">
-                  <Target className="h-5 w-5" />
-                </span>
-                <p className="text-[9px] font-semibold leading-3 text-[#061b2d]">
-                  <span className="block text-[10px] font-black text-[#061b2d]">Connect</span>
-                  with the right prospects
-                </p>
-              </div>
-              <span className="hidden text-sm font-black text-violet-400 sm:block">--&gt;</span>
-              <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-                  <span className="text-lg leading-none">...</span>
-                </span>
-                <p className="text-[9px] font-semibold leading-3 text-[#061b2d]">
-                  <span className="block text-[10px] font-black text-[#061b2d]">Engage</span>
-                  across every channel
-                </p>
-              </div>
-              <span className="hidden text-sm font-black text-violet-400 sm:block">--&gt;</span>
-              <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-600">
-                  <BarChart3 className="h-5 w-5" />
-                </span>
-                <p className="text-[9px] font-semibold leading-3 text-[#061b2d]">
-                  <span className="block text-[10px] font-black text-[#061b2d]">Close</span>
-                  more deals, faster
-                </p>
-              </div>
-            </motion.div>
-          </div>
+              <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.16em] text-white">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

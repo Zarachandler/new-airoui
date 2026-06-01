@@ -62,7 +62,7 @@ function AnimatedBorder({ children, className = "" }: { children: ReactNode; cla
 
 export function Features() {
   return (
-    <section id="features" className="section-panel pt-14 pb-24 sm:pt-16 sm:pb-28">
+    <section id="features" className="bg-white pt-14 pb-24 sm:pt-16 sm:pb-28">
       <div className="mx-auto max-w-5xl px-4">
         <div className="mx-auto max-w-xl text-center">
           <p className="brand-kicker">What makes us different</p>
@@ -109,10 +109,10 @@ export function Features() {
                   <p className="text-xs leading-6 text-slate-600">{feature.desc}</p>
                 </div>
                 <div className="mt-auto flex items-center gap-2 pt-6">
-                  <span className="h-2 w-2 rounded-full bg-violet-500" />
-                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-violet-100">
+                  <span className="h-2 w-2 rounded-full bg-[#253a7d]" />
+                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#253a7d]/10">
                     <div
-                      className="h-full rounded-full bg-violet-500"
+                      className="h-full rounded-full bg-[#253a7d]"
                       style={{ width: `${62 + index * 6}%` }}
                     />
                   </div>

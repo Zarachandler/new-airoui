@@ -21,7 +21,16 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -40,6 +49,18 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/blog/case-study-scale-decision-maker-prospecting",
+      "regex": "^/blog/case\\-study\\-scale\\-decision\\-maker\\-prospecting(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/case\\-study\\-scale\\-decision\\-maker\\-prospecting(?:/)?$"
     },
     {
       "page": "/features/ai-email-automation",
@@ -94,6 +115,12 @@
       "regex": "^/features/unified\\-inbox(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/features/unified\\-inbox(?:/)?$"
+    },
+    {
+      "page": "/icon.png",
+      "regex": "^/icon\\.png(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon\\.png(?:/)?$"
     }
   ],
   "dataRoutes": [],

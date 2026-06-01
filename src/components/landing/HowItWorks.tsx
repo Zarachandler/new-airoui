@@ -32,7 +32,7 @@ const steps = [
     title: "Let AI Handle the Rest",
     desc: "AI manages follow-ups, tracks replies, pauses campaigns after meetings, and suggests the next best action automatically.",
     icons: [Bot, CalendarCheck, CheckCircle2],
-    badgeClass: "bg-violet-100 text-violet-600",
+    badgeClass: "bg-[#eaf1ff] text-[#253a7d]",
   },
 ];
 
@@ -70,7 +70,7 @@ export function HowItWorks() {
                 <motion.span
                   key={`${card.left}-${card.top}`}
                   aria-hidden="true"
-                  className="pointer-events-none absolute border border-white/80 shadow-[0_18px_48px_-30px_rgba(102,85,255,0.72)]"
+                  className="pointer-events-none absolute border border-white/80 shadow-[0_18px_48px_-30px_rgba(37,58,125,0.72)]"
                   style={{
                     left: card.left,
                     top: card.top,
@@ -82,9 +82,9 @@ export function HowItWorks() {
                     y: [0, -6, 0],
                     opacity: [0.18, 0.36, 0.18],
                     boxShadow: [
-                      "0 18px 48px -34px rgba(102,85,255,0.28)",
-                      "0 24px 58px -28px rgba(102,85,255,0.52)",
-                      "0 18px 48px -34px rgba(102,85,255,0.28)",
+                      "0 18px 48px -34px rgba(37,58,125,0.28)",
+                      "0 24px 58px -28px rgba(37,58,125,0.52)",
+                      "0 18px 48px -34px rgba(37,58,125,0.28)",
                     ],
                   }}
                   transition={{
@@ -204,7 +204,7 @@ export function HowItWorks() {
                   {step.icons.map((Icon, iconIndex) => (
                     <motion.span
                       key={`${step.title}-${iconIndex}`}
-                      className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-[#535fb1]"
+                      className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-[#253a7d]"
                       whileHover={{ y: -4, scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
